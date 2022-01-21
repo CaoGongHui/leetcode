@@ -6,15 +6,14 @@
 
 // @lc code=start
 func twoSum(nums []int, target int) []int {
-	hashTable := map[int]int{}
-	for i, x := range nums {
-		if p, ok := hashTable[target-x]; ok {
+	hashtable := map[int]int{}
+	for i, v := range nums {
+		if p, ok := hashtable[target-v] ;ok {
 			return []int{p, i}
 		}
-		hashTable[x] = i
+		hashtable[v] = i
 	}
-	return nil
+	return []int{}
 }
 
 // @lc code=end
-
