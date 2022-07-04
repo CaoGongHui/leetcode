@@ -69,8 +69,9 @@ func connect(root *Node) *Node {
 	if root == nil {
 		return nil
 	}
-	for left_most := root; left_most.Left != nil; left_most = left_most.Left {
-		for node := left_most; node != nil; node = node.Next {
+	for leftMost := root; leftMost.Left != nil; leftMost = leftMost.Left {
+		for node := leftMost; node != nil; node = node.Next {
+
 			node.Left.Next = node.Right
 			if node.Next != nil {
 				node.Right.Next = node.Next.Left
