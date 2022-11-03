@@ -7,15 +7,14 @@
 # @lc code=start
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        max = 0
+        max = 0 
         min = prices[0]
-        for i, val in enumerate(prices):
-            if prices[i] < min:
-                min = prices[i]
+        for _, val in enumerate(prices):
+            if val < min:
+                min = val
             else:
-                dif = prices[i] - min
-                if dif > max:
-                    max = dif
+                if val - min > max:
+                    max = val - min
         return max
 # @lc code=end
 
