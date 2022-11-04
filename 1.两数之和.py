@@ -7,11 +7,10 @@
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hashtable = dict()
-        for key, value in enumerate(nums):
-            if target - value in hashtable:
-                return [hashtable[target - value], key]
-            hashtable[value] = key
+        hashMap = dict()
+        for k, v in enumerate(nums):
+            if target - v in hashMap:
+                return [hashMap[target-v], k]
+            hashMap[v] = k
         return []
 # @lc code=end
-
