@@ -20,15 +20,14 @@ class Solution:
             if l1:
                 val = l1.val + val
                 l1 = l1.next
-            if l2: 
+            if l2:
                 val = l2.val + val
                 l2 = l2.next
-
             tmp = val // 10
             val = val % 10
             tree.next = ListNode(val)
             tree = tree.next
         return head.next
 
-# @lc code=end
 
+# @lc code=end
