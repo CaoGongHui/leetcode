@@ -12,22 +12,23 @@
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        slow, fast  = l1, l2
-        dummpy = ListNode(0)
-        root = dummpy
-        while slow != None and fast != None:
-            if slow.val > fast.val:
-                dummpy.next = fast
-                fast = fast.next
-            else:
-                dummpy.next = slow
+        slow, fast = l1, l2
+        dummy = ListNode(0)
+        pre = dummy
+
+        while slow and fast:
+            if slow.val < fast.val:
+                dummy.next = slow
                 slow = slow.next
-            dummpy = dummpy.next
-        if slow != None:
-            dummpy.next = slow
-        if fast != None:
-            dummpy.next = fast
-        return root.next
+            else:
+                dummy.next = fast
+                fast = fast.next
+            dummy = dummy.next
+        if slow:
+            dummy.next = slow
+        if fast:
+            dummy.next = fast
+        return pre.next
+
 
 # @lc code=end
-
