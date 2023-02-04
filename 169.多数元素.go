@@ -36,6 +36,15 @@ func majorityElement(nums []int) int {
 		}
 	}
 	return m
+
+	// hash := make(map[int]int)
+	// for _, v := range nums {
+	// 	hash[v]++
+	// 	if hash[v] > len(nums)/2 {
+	// 		return v
+	// 	}
+	// }
+	// return 0
 }
 
 // @lc code=end
