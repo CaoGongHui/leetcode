@@ -58,8 +58,8 @@ func longestSubarray(nums []int) int {
 	ans := 0
 	cnt := map[int]int{}
 	left := 0
-	for i := 0; i < len(nums); i++ {
-		cnt[nums[i]]++
+	for _, v := range nums {
+		cnt[v]++
 		for cnt[0] > 1 {
 			cnt[nums[left]]--
 			left++
@@ -69,7 +69,6 @@ func longestSubarray(nums []int) int {
 	if ans == len(nums) {
 		ans = ans - 1
 	}
-
 	return ans
 }
 

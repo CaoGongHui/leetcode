@@ -27,15 +27,29 @@
 // 	return root
 // }
 // 先交换后回溯
+// func invertTree(root *TreeNode) *TreeNode {
+// 	if root == nil {
+// 		return root
+// 	}
+// 	left := invertTree(root.Left)
+// 	right := invertTree(root.Right)
+// 	root.Left = right
+// 	root.Right = left
+// 	return root
+// }
 func invertTree(root *TreeNode) *TreeNode {
 	if root == nil {
 		return root
 	}
-	left := invertTree(root.Left)
-	right := invertTree(root.Right)
-	root.Left = right
-	root.Right = left
-	return root
+	// var temp *TreeNode
+	// temp = root.Left
+	// root.Left = root.Right
+	// root.Right = temp
+	// root.Left = invertTree(root.Left)
+	// root.Right = invertTree(root.Right)
+	// return root
+	return &TreeNode{Val: root.Val, Left: invertTree(root.Right), Right: invertTree(root.Left)}
+
 }
 
 // @lc code=end

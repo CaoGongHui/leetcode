@@ -73,7 +73,6 @@ func equalSubstring(s string, t string, maxCost int) int {
 		}
 		ans = max(ans, i-left+1)
 	}
-
 	return ans
 }
 func abs(a int) int {
